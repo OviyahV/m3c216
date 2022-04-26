@@ -5,26 +5,24 @@ public class RockPaperScissors {
 
         // Getting input from the user
         Scanner playersInput = new Scanner(System.in);
-        //System.out.println("Hi, there! How many rounds would you like to play?");
-
-        //if(playersInput.hasNextInt() == false){
-        //} else {
-        //}
+        System.out.println("Hi, there! How many rounds would you like to play?");
 
 
         // Players Move
         System.out.println("Time to choose Rock, Paper or Scissors: ");
         String playersMove = playersInput.nextLine();
         System.out.println("Player: " + playersMove);
-        if(!playersMove.equals("Rock") && !playersMove.equals("Paper") && !playersMove.equals("Scissors")){
+        if(!playersMove.equalsIgnoreCase("Rock") && !playersMove.equalsIgnoreCase("Paper") && !playersMove.equalsIgnoreCase("Scissors")){
             System.out.println("Error");
         }else{
 
             // Computers Move
             Random random = new Random();
-            int max = 3;
-            int min = 0;
-            int compMove = random.nextInt(max + 1 - min) + min;
+            int max = 4;
+            int min = 1;
+            //This gives you a random number in between 1 (inclusive) and 4 (exclusive).
+            int compMove = random.nextInt(max - min) + min;
+            System.out.println(compMove);
 
             String compChoice = "";
             if(compMove == 1){
