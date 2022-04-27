@@ -3,26 +3,49 @@ import java.util.*;
 public class RockPaperScissors {
     public static void main(String [] args){
 
-        // Getting input from the user
+
+
         Scanner playersInput = new Scanner(System.in);
-        System.out.println("Hi, there! How many rounds would you like to play?");
+        System.out.print("How many rounds do you want to play? ");
+        int totalRounds = playersInput.nextInt();
+        int currentRounds = 0;
+        boolean playAgain = true;
+        if(totalRounds>10 || totalRounds<1){
+            System.out.println("Error: out of bounds");
+        }
+
+        while(playAgain){
+            game();
+            currentRounds++;
+            if(currentRounds == totalRounds){
+                break;
+            }
+        }
+
+    }
 
 
-        // Players Move
-        System.out.println("Time to choose Rock, Paper or Scissors: ");
-        String playersMove = playersInput.nextLine();
+
+
+
+    private static void game(){
+
+        Scanner Input = new Scanner(System.in);
+        System.out.println(" ");
+        System.out.printf("Time to choose Rock, Paper or Scissors: ");
+        String playersMove = Input.nextLine();
         System.out.println("Player: " + playersMove);
         if(!playersMove.equalsIgnoreCase("Rock") && !playersMove.equalsIgnoreCase("Paper") && !playersMove.equalsIgnoreCase("Scissors")){
             System.out.println("Error");
         }else{
 
-            // Computers Move
+            // computers Move
             Random random = new Random();
             int max = 4;
             int min = 1;
             //This gives you a random number in between 1 (inclusive) and 4 (exclusive).
             int compMove = random.nextInt(max - min) + min;
-            System.out.println(compMove);
+
 
             String compChoice = "";
             if(compMove == 1){
@@ -49,10 +72,10 @@ public class RockPaperScissors {
                 System.out.println("You WIN!");
             }else{
                 compWins++;
+
                 System.out.println("You LOST!");
             }
-
         }
-
+        return;
     }
 }
