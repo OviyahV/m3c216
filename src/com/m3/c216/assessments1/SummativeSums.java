@@ -1,6 +1,5 @@
-package com.m3.c216.assessments;
+package com.m3.c216.assessments1;
 
-import java.util.*;
 import java.util.stream.IntStream;
 
 public class SummativeSums {

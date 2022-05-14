@@ -1,3 +1,5 @@
+package com.m3.c216.assessments1;
+
 import java.util.*;
 
 public class RockPaperScissors {
@@ -32,7 +34,7 @@ public class RockPaperScissors {
             int compMove = random.nextInt(max - min) + min;
 
 
-            String compChoice = "";
+            String compChoice;
             if(compMove == 1){
                 compChoice = "Rock";
             }else if(compMove == 2){
@@ -45,9 +47,11 @@ public class RockPaperScissors {
 
             // Player's move
             Scanner Input = new Scanner(System.in);
-            System.out.printf("%n" + "Time to choose Rock, Paper or Scissors: ");
+            System.out.printf("%n");
+            System.out.printf("Time to choose Rock, Paper or Scissors: ");
             String playersMove = Input.nextLine();
-            System.out.printf("Player: " + playersMove + "%n" +"Computer: " + compChoice);
+            System.out.printf("Player: " + playersMove + "%n" );
+            System.out.println("Computer: " + compChoice);
             if(!playersMove.equalsIgnoreCase("Rock") && !playersMove.equalsIgnoreCase("Paper") && !playersMove.equalsIgnoreCase("Scissors")){
                 System.out.println("Error");
             }else{
@@ -61,19 +65,27 @@ public class RockPaperScissors {
 
             if(playersMove.equals(compChoice)){
                 draws++;
-                System.out.printf("%n" + "It's a TIE");
+                System.out.println("It's a TIE");
 
             }else if(playersMove.equals("Rock") && compChoice.equals("Scissors") || playersMove.equals("Paper") && compChoice.equals("Rock") || playersMove.equals("Scissors") && compChoice.equals("Paper")) {
                 playerWins++;
-                System.out.printf("%n" + "You WIN!");
+                System.out.println("You WIN!");
 
             }else{
                 compWins++;
-                System.out.printf("%n" + "You LOST!");
+                System.out.println("You LOST!");
 
             }
+
+
+
         }
         return;
+    }
+
+
+    public static void scoreBoard(){
+
     }
 
 

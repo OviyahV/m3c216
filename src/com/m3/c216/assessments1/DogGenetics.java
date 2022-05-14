@@ -1,4 +1,4 @@
-package com.m3.c216.assessments;
+package com.m3.c216.assessments1;
 import java.util.*;
 
 public class DogGenetics {
