@@ -127,19 +127,19 @@ public class Controller {
                 switch (menu) {
 
                     case "Release date":
-                        dvdToEdit.setReleaseDate(menu);
+                        dvdToEdit.setReleaseDate(view.edited(menu));
                         break;
                     case "MPAA rating":
-                        dvdToEdit.setMpaaRating(menu);
+                        dvdToEdit.setMpaaRating(view.edited(menu));
                         break;
                     case "Director's name":
-                        dvdToEdit.setDirector(menu);
+                        dvdToEdit.setDirector(view.edited(menu));
                         break;
                     case "Studio name":
-                        dvdToEdit.setStudio(menu);
+                        dvdToEdit.setStudio(view.edited(menu));
                         break;
                     case "User rating":
-                        dvdToEdit.setUserRating(menu);
+                        dvdToEdit.setUserRating(view.edited(menu));
                         break;
                     case "Exit":
                         loop = false;

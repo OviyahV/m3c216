@@ -40,16 +40,15 @@ public class View {
                 "\nDirector's name" +
                 "\nUser rating" +
                 "\nStudio name" +
-                "\nExit edit menu");
-        io.readString("Which category would you like to edit?");
-        String change = io.readString("Please enter the new edits:" );
-        return change;
+                "\nExit");
+        return io.readString("Which category would you like to edit?");
+        //String change = io.readString("Please enter the new edits:" );
+        //return change;
     }
 
-
-
-    public String editOne (String edits) {
-        return io.readString("Please enter the new " + edits);
+    public String edited(String edits){
+        String changed = io.readString("Please enter the new " + edits);
+        return changed;
     }
 
 
